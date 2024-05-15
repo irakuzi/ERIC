@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>multiplication table range</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            margin: 50px;
+            font-size: 22px;
+            background-color:gray;
+            color: blueviolet;
+        }
+        input{
+            padding: 10px;
+            margin: 5px;
+            background-color:blanchedalmond;
+            color: rgb(54, 29, 212);
+            border-radius: 20px;
+        }
+        button{
+            padding: 10px;
+            margin: 5px;
+            cursor: pointer;
+            color: deepskyblue;
+            background-color: gray;
+            border-radius: 20px;
+
+        }
+        #result{
+            font-size: 18px;
+            margin-top: 20px;
+            background-color: aliceblue;
+            color: rgb(28, 29, 39);
+        }
+    </style>
+</head>
+<body>
+    <h1><marquee>multiplication table range</marquee></h1>
+    <label for="start Range">Enter the starting number</label>
+    <input type="number"id="startRange"placeholder="enter the starting number"required>
+    <label for="endRange">enter the ending number:</label>
+    <input type="number"id="endRange"placeholder="enter the ending number"required>
+    <button onclick="displayMultiplicationTable()">display table</button>
+  <div id="result"></div>
+  <script>
+    function displayMultiplicationTable(){
+        //Get user input for the range 
+        let startRange=parseInt(document.getElementById('startRange').value);
+        let endRange=parseInt(document.getElementById('endRange').value);
+        //check if the inputs are valid
+        if(isNaN(startRange)||isNaN(endRange)){
+            alert('please enter valid numbers for the range');
+            return;
+        }
+        //generate and display the multiplication table within the specified range
+        let result='<h2>Multiplication Table</h2>';
+        for(let multiplicand=startRange;multiplicand<=endRange;multiplicand++){
+            result+='<h3>table for'+multiplicand+'</h3>';
+            for(let multiplier=1;multiplier<=10;multiplier++){
+                let product=multiplicand*multiplier;
+                result+=multiplicand+'x'+multiplier+'='+product+'<br>';
+            }
+        }
+        document.getElementById('result').innerHTML=result;
+    }
+  </script>  
+</body>
+</html>

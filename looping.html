@@ -1,0 +1,32 @@
+<html>
+<!--html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="array"></p>
+    <script>
+        var fruits,text,Flen,i;
+        fruits["banana","apple","mango"];
+        Flen=fruits.length
+        text="<ul>";
+            for(i=0;i=Flen;i++)
+            {
+                text+="<ul>"+fruits[i]+"</ul>";
+            }
+            document.getElementById("array").innerHTML=text;-->
+            <button onclick="myfunction()">add on array value</button>
+            <p id="add array"></p>
+            <script>
+                varfruits=["banana","apple","mango"];
+
+                document.getElementById("add array").innerHTML=fruits;
+                function myfunction(){
+                    fruits.push("lemon");
+                    document.getElementById("add array").innerHTML=fruits;
+                }
+    </script>
+</body>
+</html>
